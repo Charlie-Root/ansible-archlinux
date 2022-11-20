@@ -77,6 +77,7 @@ base_packages:
     - dateutils
     - bc
     - strace
+    - openvpn
     - lsof
     - sysstat
     - tig
