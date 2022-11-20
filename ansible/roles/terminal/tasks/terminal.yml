@@ -29,9 +29,9 @@
 
 - name: create kitty configuration directory
   file:
-    dest: /home/"{{ user.name }}"/.config/kitty
+    dest: "/home/{{ user.name }}"/.config/kitty
     state: directory
-    owner: ""{{ user.name }}""
+    owner: "{{ user.name }}"
     group: users
     mode: 0755
   become: true
@@ -39,7 +39,7 @@
 - name: configure kitty
   template:
     src: kitty.conf
-    dest: /home/{{ user.name }}/.config/kitty/kitty.conf
+    dest: "/home/{{ user.name }}/.config/kitty/kitty.conf"
     owner: "{{ user.name }}"
     group: users
     mode: 0644
