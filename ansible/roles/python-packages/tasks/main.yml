@@ -1,0 +1,5 @@
+---
+# tasks file for python-packages
+- name: Install python package using a proxy
+  ansible.builtin.pip:
+    name: "{{ pip_packages }}"

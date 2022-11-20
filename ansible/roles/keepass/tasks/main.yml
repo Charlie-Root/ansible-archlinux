@@ -4,3 +4,9 @@
   pacman:
     name: keepassxc
     state: present
+
+- name: Install 1Password
+  aur:
+    name: 1password
+    user: "{{ user.name }}"
+    skip_pgp: true

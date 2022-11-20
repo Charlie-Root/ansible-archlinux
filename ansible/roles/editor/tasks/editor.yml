@@ -31,6 +31,14 @@
     - rebornix.ruby
     - redhat.java
     - redhat.vscode-yaml
+    - redhat.ansible
+    - mattiasbaake.vscode-snippets-for-ansible
+    - njpwerner.autodocstring
+    - eamodio.gitlens
+    - onlyutkarsh.git-config-user-profiles
+    - robole.markdown-snippets
+    - gpoore.codebraid-preview
+    - esbenp.prettier-vscode
     - streetsidesoftware.code-spell-checker
     - waderyan.gitblame
     - wingrunr21.vscode-ruby

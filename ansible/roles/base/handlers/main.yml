@@ -5,3 +5,7 @@
 
 - name: restart ntpd
   ansible.builtin.service: name=ntpd state=restarted
+
+
+- name: restart auto-cpufreq
+  ansible.builtin.service: name=auto-cpufreq state=restarted

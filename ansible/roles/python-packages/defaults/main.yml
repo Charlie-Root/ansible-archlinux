@@ -1,0 +1,8 @@
+---
+# defaults file for python-packages
+pip_packages:
+    - virtualenv
+    - shed
+    - commitizen
+    - flake8
+    - ansible-lint

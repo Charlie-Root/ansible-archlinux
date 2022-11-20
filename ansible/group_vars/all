@@ -3,7 +3,7 @@
 # ==================
 ##
 user:
-    name: aaron
+    name: wieger
     group: users
     shell: /bin/zsh
 
@@ -20,10 +20,10 @@ user:
 #                    if you wan't proprietary drivers follow the steps documented in the arch wiki.
 ##
 system:
-    locale: de_CH.UTF-8
-    timezone: Europe/Zurich
-    processor: amd
-    graphics_card: nvidia
+    locale: nl_NL.UTF-8
+    timezone: Europe/Amsterdam
+    processor: intel
+    graphics_card: intel
     macspoof: disabled
 
 ##
@@ -68,6 +68,8 @@ base_packages:
     - curl
     - tmux
     - git
+    - python
+    - python-pip
     - rsync
     - coreutils
     - dateutils

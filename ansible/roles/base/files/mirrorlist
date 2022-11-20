@@ -3,12 +3,16 @@
 ## Generated on 2022-05-23
 ##
 
-## Switzerland
-Server = http://pkg.adfinis.com/archlinux/$repo/os/$arch
-Server = https://pkg.adfinis.com/archlinux/$repo/os/$arch
-Server = http://mirror.init7.net/archlinux/$repo/os/$arch
-Server = https://mirror.init7.net/archlinux/$repo/os/$arch
-Server = http://mirror.puzzle.ch/archlinux/$repo/os/$arch
-Server = https://mirror.puzzle.ch/archlinux/$repo/os/$arch
-Server = https://theswissbay.ch/archlinux/$repo/os/$arch
-Server = https://mirror.ungleich.ch/mirror/packages/archlinux/$repo/os/$arch
+Server = http://mirror.cj2.nl/archlinux/$repo/os/$arch
+Server = https://mirror.cj2.nl/archlinux/$repo/os/$arch
+Server = https://mirrors.daan.vodka/archlinux/$repo/os/$arch
+Server = http://mirrors.evoluso.com/archlinux/$repo/os/$arch
+Server = http://mirror.i3d.net/pub/archlinux/$repo/os/$arch
+Server = https://mirror.i3d.net/pub/archlinux/$repo/os/$arch
+Server = https://arch.jeweet.net/$repo/os/$arch
+Server = http://mirror.koddos.net/archlinux/$repo/os/$arch
+Server = https://mirror.koddos.net/archlinux/$repo/os/$arch
+Server = http://arch.mirrors.lavatech.top/$repo/os/$arch
+Server = https://arch.mirrors.lavatech.top/$repo/os/$arch
+Server = http://mirror.ams1.nl.leaseweb.net/archlinux/$repo/os/$arch
+Server = https://mirror.ams1.nl.leaseweb.net/archlinux/$repo/os/$arch

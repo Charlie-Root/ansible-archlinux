@@ -9,6 +9,8 @@
     - { role: network, tags: ['network'] }
     - { role: kernel, tags: ['kernel'] }
     - { role: base, tags: ['base'] }
+    - { role: docker, tags: ['docker'] }
+    - { role: python-packages, tags: ['python'] }
     - { role: firewall, tags: ['firewall'] }
     - { role: grub, tags: ['grub'], when: "bootloader == 'grub'"}
     - { role: syslinux, tags: ['syslinux'], when: "bootloader == 'syslinux'"}
@@ -16,13 +18,13 @@
     - { role: shell, tags: ['shell'] }
     - { role: editor, tags: ['editor'] }
     - { role: terminal, tags: ['terminal'] }
-    - { role: windowmanager, tags: ['windowmanager'] }
+    #- { role: windowmanager, tags: ['windowmanager'] }
     - { role: browsers, tags: ['browsers'] }
     - { role: bluetooth, tags: ['bluetooth'] }
     - { role: calibre, tags: ['calibre'] }
     - { role: redshift, tags: ['redshift'] }
     - { role: keepass, tags: ['keepass'] }
-    - { role: spotify, tags: ['spotify'] }
+    #- { role: spotify, tags: ['spotify'] }
     - { role: macspoof, tags: ['macspoof'], when: "system.macspoof == 'enabled'"}
     - { role: sound, tags: ['sound'] }
     - { role: mail, tags: ['mail'] }
