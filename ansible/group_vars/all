@@ -68,6 +68,8 @@ base_packages:
     - curl
     - tmux
     - git
+    - nmap
+    - traceroute
     - python
     - python-pip
     - rsync
