@@ -29,7 +29,7 @@
 
 - name: create kitty configuration directory
   file:
-    dest: "/home/{{ user.name }}"/.config/kitty
+    dest: "/home/{{ user.name }}/.config/kitty"
     state: directory
     owner: "{{ user.name }}"
     group: users
