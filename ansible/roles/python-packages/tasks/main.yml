@@ -1,5 +1,12 @@
 ---
-# tasks file for python-packages
+- name: install python development tools
+  pacman:
+    name:
+      - python
+      - python-pip
+      - python-virtualenv
+  become: true
+  
 - name: Install python package using a proxy
   ansible.builtin.pip:
     name: "{{ pip_packages }}"

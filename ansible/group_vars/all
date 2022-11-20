@@ -7,6 +7,10 @@ user:
     group: users
     shell: /bin/zsh
 
+git:
+    name: CharlieRoot
+    email: wieger.bontekoe@gmail.com
+
 ##
 # System configuration
 # ====================
