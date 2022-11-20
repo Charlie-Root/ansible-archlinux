@@ -8,3 +8,10 @@
   until: task_result is success
   retries: 10
   delay: 2
+
+- name: enable Docker
+  systemd:
+    name: docker
+    state: started
+    enabled: true
+  become: true
