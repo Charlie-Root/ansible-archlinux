@@ -45,7 +45,9 @@
 -A OUTPUT   -p TCP --dport 41144                      -j ACCEPT
 # GPG Keys
 -A OUTPUT   -p TCP --dport 11371                      -j ACCEPT
-
+# OpenVPN
+-A OUTPUT   -p TCP --dport 8443                       -j ACCEPT
+-A OUTPUT   -p UDP --dport 10693                      -j ACCEPT
 
 # Logging of droppped packets
 -N LOGGING
