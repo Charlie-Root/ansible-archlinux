@@ -35,7 +35,8 @@
 -A OUTPUT   -p TCP --dport 8443                       -j ACCEPT
 -A OUTPUT   -p TCP --dport 32400                      -j ACCEPT
 -A OUTPUT   -p TCP --dport 25271                      -j ACCEPT
--A OUTPUT   -p TCP --dport 8443                       -j ACCEPT
+-A OUTPUT   -p TCP --dport 8080                       -j ACCEPT
+-A OUTPUT   -p TCP --dport 5601                       -j ACCEPT
 -A OUTPUT   -p TCP --dport 9091                       -j ACCEPT
 # Teamspeak
 -A OUTPUT   -p UDP --dport 9987                       -j ACCEPT
