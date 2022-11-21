@@ -30,6 +30,7 @@
     - ms-toolsai.jupyter-renderers
     - rebornix.ruby
     - redhat.java
+    - ms-azuretools.vscode-docker
     - redhat.vscode-yaml
     - redhat.ansible
     - mattiasbaake.vscode-snippets-for-ansible

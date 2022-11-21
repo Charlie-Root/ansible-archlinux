@@ -27,7 +27,7 @@ to setup a LVM on LUKS system using grub2 in GPT EFI boot mode.
 
 The Ansible playbook does not depend on any specific installation method.
 
-## How to run the ansible playbook after the initial installtion
+## How to run the ansible playbook after the initial installation
 First install ansible
 
 ``` bash
@@ -40,7 +40,7 @@ config in `group_vars/all` to match your system stats. Then run it.
 ``` bash
 $ git clone --recurse-submodules -j8 https://github.com/id101010/ansible-archlinux.git
 $ cd ansible-archlinux/ansible
-$ ansible-playbook -i inventory/localhost playbook.yml [--tags $LIMIT_TO_TAG]
+$ sudo ansible-playbook -i inventory/localhost playbook.yml [--tags $LIMIT_TO_TAG]
 ```
 
 Lean back and watch the installation.
