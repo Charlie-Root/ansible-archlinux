@@ -9,6 +9,10 @@
 # Input chain
 -A INPUT    -i lo                                     -j ACCEPT
 -A INPUT    -p icmp                                   -j ACCEPT
+#Inbound ICMP traffic Policy
+-A INPUT    -p icmp --icmp-type 3/3                   -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+-A INPUT    -p icmp --icmp-type 11                    -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+-A INPUT    -p udp --sport 33434:33524                -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
 {% if ssh.enable_sshd %}
 -A INPUT    -p TCP --dport {{ ssh.port }}             -j ACCEPT
 {% endif %}
@@ -19,6 +23,7 @@
 -A OUTPUT   -o lo                                     -j ACCEPT
 -A OUTPUT   -p icmp                                   -j ACCEPT
 -A OUTPUT   -m state --state RELATED,ESTABLISHED      -j ACCEPT
+-A OUTPUT   -p UDP --dport 33434:33524                -m state --state NEW -j ACCEPT
 -A OUTPUT   -p TCP --dport ssh                        -j ACCEPT
 -A OUTPUT   -p TCP --dport http                       -j ACCEPT
 -A OUTPUT   -p TCP --dport https                      -j ACCEPT
@@ -26,6 +31,8 @@
 -A OUTPUT   -p UDP --dport domain                     -j ACCEPT
 -A OUTPUT   -p TCP --dport domain                     -j ACCEPT
 -A OUTPUT   -p TCP --dport 631                        -j ACCEPT
+# MySQL
+-A OUTPUT   -p TCP --dport 3306                       -j ACCEPT
 # Personal Mailserver config
 -A OUTPUT   -p TCP --dport 587                        -j ACCEPT
 -A OUTPUT   -p TCP --dport 993                        -j ACCEPT
@@ -48,6 +55,8 @@
 -A OUTPUT   -p TCP --dport 11371                      -j ACCEPT
 # OpenVPN
 -A OUTPUT   -p TCP --dport 8443                       -j ACCEPT
+# Grafana
+-A OUTPUT   -p TCP --dport 3000                       -j ACCEPT
 -A OUTPUT   -p UDP --dport 10693                      -j ACCEPT
 
 # Logging of droppped packets

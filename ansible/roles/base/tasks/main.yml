@@ -8,7 +8,5 @@
   name: ntp
 - ansible.builtin.import_tasks: locale.yml
   name: locale
-- ansible.builtin.import_tasks: gpu.yml
-  name: gpu
 - ansible.builtin.import_tasks: git.yml
   name: git

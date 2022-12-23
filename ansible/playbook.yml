@@ -10,7 +10,7 @@
     - { role: kernel, tags: ['kernel'] }
     - { role: base, tags: ['base'] }
     - { role: docker, tags: ['docker'] }
-#    - { role: python-packages, tags: ['python'] }
+    #- { role: python-packages, tags: ['python'] }
     - { role: firewall, tags: ['firewall'] }
     - { role: grub, tags: ['grub'], when: "bootloader == 'grub'"}
     - { role: syslinux, tags: ['syslinux'], when: "bootloader == 'syslinux'"}
@@ -30,5 +30,5 @@
     - { role: mail, tags: ['mail'] }
     - { role: photography, tags: ['photography'] }
     - { role: messengers, tags: ['messengers'] }
-    - { role: teamspeak3, tags: ['teamspeak3'] }
+    #- { role: teamspeak3, tags: ['teamspeak3'] }
     - { role: games, tags: ['games'] }
