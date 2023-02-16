@@ -50,6 +50,14 @@
   retries: 10
   delay: 2
 
+# add task to update all packages using aur
+- name: Update all packages using yay
+  shell: yay -Sy --noconfirm
+  register: task_result
+  until: task_result is success
+  retries: 10
+  delay: 2
+
 - name: Install microcode updates for intel (if necessary)
   pacman:
     name: intel-ucode
@@ -78,3 +86,14 @@
 
 - name: Enable cronie server
   ansible.builtin.service: name=cronie state=started enabled=true
+
+- name: Install YubiKey Personalization GUI
+  pacman: name=yubikey-personalization-gui state=present
+
+- name: Install smartcard libs/tools
+  pacman:
+    name:
+      - pcsclite
+      - libusb-compat
+      - ccid
+    state: present

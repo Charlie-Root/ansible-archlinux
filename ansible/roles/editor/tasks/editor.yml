@@ -15,6 +15,11 @@
     name: vscodium-bin
     user: "{{ user.name }}"
 
+- name: install vscode
+  aur:
+    name: visual-studio-code-bin
+    user: wieger
+
 - name: install vscodium extensions
   ansible.builtin.command: "vscodium --install-extension {{ item }}"
   become_user: "{{ user.name }}"

@@ -9,15 +9,40 @@
 # Input chain
 -A INPUT    -i lo                                     -j ACCEPT
 -A INPUT    -p icmp                                   -j ACCEPT
-{% if ssh.enable_sshd %}
--A INPUT    -p TCP --dport {{ ssh.port }}             -j ACCEPT
-{% endif %}
 -A INPUT    -m state --state RELATED,ESTABLISHED      -j ACCEPT
 -A INPUT    -m state --state NEW,INVALID              -j DROP
+# dhcpv6 and icmp
+-A INPUT    -p udp -m udp --dport 546                 -j ACCEPT
+-A INPUT    -p ipv6-icmp                              -j ACCEPT
+
+# Permit needed ICMP packet types for IPv6 per RFC 4890.
+-A INPUT              -p ipv6-icmp --icmpv6-type 1   -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 2   -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 3   -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 4   -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 133 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 134 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 135 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 136 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 137 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 141 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 142 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 130 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 131 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 132 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 143 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 148 -j ACCEPT
+-A INPUT              -p ipv6-icmp --icmpv6-type 149 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 151 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 152 -j ACCEPT
+-A INPUT -s fe80::/10 -p ipv6-icmp --icmpv6-type 153 -j ACCEPT
+
+
 
 # Output chain
 -A OUTPUT   -o lo                                     -j ACCEPT
 -A OUTPUT   -p icmp                                   -j ACCEPT
+-A OUTPUT   -p ipv6-icmp                             -j ACCEPT
 -A OUTPUT   -m state --state RELATED,ESTABLISHED      -j ACCEPT
 -A OUTPUT   -p TCP --dport ssh                        -j ACCEPT
 -A OUTPUT   -p TCP --dport http                       -j ACCEPT

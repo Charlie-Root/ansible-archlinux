@@ -45,6 +45,8 @@
 -A OUTPUT   -p TCP --dport 8080                       -j ACCEPT
 -A OUTPUT   -p TCP --dport 5601                       -j ACCEPT
 -A OUTPUT   -p TCP --dport 9091                       -j ACCEPT
+# VPN
+-A OUTPUT   -p UDP --dport 1194			      -j ACCEPT
 # Teamspeak
 -A OUTPUT   -p UDP --dport 9987                       -j ACCEPT
 # Factorio
@@ -58,6 +60,15 @@
 # Grafana
 -A OUTPUT   -p TCP --dport 3000                       -j ACCEPT
 -A OUTPUT   -p UDP --dport 10693                      -j ACCEPT
+
+# Dev
+-A OUTPUT   -p TCP --dport 8000                       -j ACCEPT
+-A OUTPUT   -p TCP --dport 8080                       -j ACCEPT
+
+#unify
+-A OUTPUT   -p TCP --dport 3478                       -j ACCEPT
+-A OUTPUT   -p UDP --dport 3478                       -j ACCEPT
+-A OUTPUT   -p UDP --dport 5353                       -j ACCEPT
 
 # Logging of droppped packets
 -N LOGGING

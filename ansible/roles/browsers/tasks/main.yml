@@ -3,6 +3,11 @@
 - name: Install w3m
   pacman: name=w3m state=present
 
+- name: Install lynx
+  pacman:
+    name: lynx
+    state: present
+
 - name: Install firefox
   pacman: name=firefox state=present
   tags:
@@ -16,3 +21,10 @@
   tags:
     - tor-browser
     - aur
+
+- name: Install Chromium
+  pacman:
+    name: chromium
+    state: present
+  tags:
+    - chromium
