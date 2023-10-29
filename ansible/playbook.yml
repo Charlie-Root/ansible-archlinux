@@ -11,6 +11,7 @@
     - { role: base, tags: ['base'] }
     - { role: docker, tags: ['docker'] }
     #- { role: python-packages, tags: ['python'] }
+    - { role: hostsctl, tags: ['hostsctl'] }
     - { role: firewall, tags: ['firewall'] }
     - { role: grub, tags: ['grub'], when: "bootloader == 'grub'"}
     - { role: syslinux, tags: ['syslinux'], when: "bootloader == 'syslinux'"}
